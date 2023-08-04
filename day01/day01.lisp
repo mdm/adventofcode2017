@@ -1,3 +1,5 @@
+(require :uiop)
+
 (defun read-input (filename)
     (with-open-file (stream filename)
         (read-line stream nil)))
@@ -22,7 +24,7 @@
         (solve-captcha input (/ (length input) 2))))
 
 (defun day01 ()
-    (format t "~d~%" (part1 "input.txt"))
-    (format t "~d~%" (part2 "input.txt")))
+    (format t "~d~%" (part1 (car (uiop:command-line-arguments))))
+    (format t "~d~%" (part2 (car (uiop:command-line-arguments)))))
 
 (day01)
